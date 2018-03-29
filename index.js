@@ -27,9 +27,9 @@ server.listen(port, function(err) {
 
 
 /* if we receive a GET request for the base URL redirect to /lists */
-/*server.get('/', (req, res, next) => {
+server.get('/', (req, res, next) => {
     res.redirect('/books', next)
-})*/
+})
 
 /* setup a route to handle GET request for getting all books data from MongoDB */
 server.get(/^\/books$/, (req, res, next) => {
