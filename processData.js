@@ -29,7 +29,7 @@ function getBooksFromGoogle() {
     return new Promise((resolve, reject) => {
         var books = []
         for (let i = 0; i < subjects.length; i++) {
-            var query_string = { q: '' + '+subject:' + subjects[i], printType: 'books', langRestrict: 'en', filter: 'paid-ebooks', orderBy: 'newest', fields: get_fields, maxResults: 40 }
+            var query_string = { q: '' + '+subject:' + subjects[i], printType: 'books', langRestrict: 'en', filter: 'paid-ebooks', orderBy: 'newest', fields: get_fields, maxResults: 20 }
             request.get({ url: url, qs: query_string }, (err, res, body) => {
                 if (err) {
                     reject(console.log(err))
