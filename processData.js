@@ -185,8 +185,8 @@ exports.getBookByCategory = (category) => {
 exports.getUser = (username) => {
     return new Promise((resolve, reject) => {
         mongo.getUser(username).toArray((err, result) => {
-            if (err) {
-                reject({ code: 400, contentType: 'application/json', response: { status: 'Error', message: err } })
+            if (result.length === 0) {
+                reject({ code: 400, contentType: 'application/json', response: { status: 'Error', message: "User not exist" } })
             }
             else {
                 resolve({ code: 200, contentType: 'application/json', response: result[0] })
