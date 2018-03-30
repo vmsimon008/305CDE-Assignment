@@ -102,7 +102,7 @@ server.post('/registeruser', (req, res) => {
 })
 
 /* setup a route to handle PUT request for updating user information  */
-server.put('/user/update/:username', (req, res) => {
+server.put('/user/:username', (req, res) => {
     const body = req.body
     const auth = req.authorization
     const username = req.params.username
